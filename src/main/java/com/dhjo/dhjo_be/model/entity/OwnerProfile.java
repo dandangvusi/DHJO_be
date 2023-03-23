@@ -12,16 +12,12 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class OwnerProfile {
-    @Id
-    @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    @Column(name = "name", length = 255, nullable = true)
+public class OwnerProfile extends IdentifyEntity {
+    @Column(name = "name", length = 128, nullable = false)
     private String name;
-    @Column(name = "phone_num", length = 12, nullable = true)
+    @Column(name = "phone_num", length = 12, nullable = false)
     private String phone_num;
-    @Column(name = "identification_num", length = 12, nullable = true)
+    @Column(name = "identification_num", length = 12, nullable = false)
     private String identification_num;
     @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "owner_id", nullable = false, referencedColumnName = "id")

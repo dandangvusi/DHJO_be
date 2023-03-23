@@ -13,11 +13,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Skill {
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(name = "skill_name")
+public class Skill extends IdentifyEntity {
+    @Column(name = "skill_name", nullable = false)
     private Enum.SKILL skill_name;
 }

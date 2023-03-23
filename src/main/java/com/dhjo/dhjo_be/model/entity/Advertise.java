@@ -14,16 +14,12 @@ import java.time.LocalDate;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Advertise {
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    @Column(name = "banner", nullable = false)
+public class Advertise extends BaseEntity {
+    @Column(name = "banner", nullable = false, length = 255)
     private String banner;
     @Column(name = "expire_date", nullable = false)
     private LocalDate expire_date;
-    @Column(name = "agency_name", nullable = false)
+    @Column(name = "agency_name", nullable = false, length = 255)
     private String agency_name;
     @Column(name = "detailed_info", nullable = false, length = 2000)
     private String detailed_info;

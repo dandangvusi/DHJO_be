@@ -13,11 +13,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Role {
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class Role extends IdentifyEntity {
     @Column(name = "role_name", nullable = false)
     @Enumerated(EnumType.STRING)
     private Enum.ROLE role_name;

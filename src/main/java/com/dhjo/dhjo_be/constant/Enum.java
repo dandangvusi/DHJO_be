@@ -26,4 +26,9 @@ public class Enum {
         HOUSE,
         APARTMENT
     }
+    public enum PERIOD {
+        DAY,
+        WEEK,
+        MONTH
+    }
 }
