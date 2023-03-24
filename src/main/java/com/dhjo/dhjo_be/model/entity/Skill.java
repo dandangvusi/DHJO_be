@@ -14,6 +14,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Skill extends IdentifyEntity {
-    @Column(name = "skill_name", nullable = false)
+    @Column(name = "skill_name", nullable = false, columnDefinition = "enum('ENGLISH','COOKING','LAUNDRY')")
     private Enum.SKILL skill_name;
 }

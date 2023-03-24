@@ -14,7 +14,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Role extends IdentifyEntity {
-    @Column(name = "role_name", nullable = false)
-    @Enumerated(EnumType.STRING)
+    @Column(name = "role_name", nullable = false, columnDefinition = "enum('ROLE_ADMIN','ROLE_OWNER','ROLE_HELPER')")
     private Enum.ROLE role_name;
 }

@@ -28,8 +28,8 @@ public class Post extends BaseEntity {
     private Long fee;
     @Column(name = "confirm_by_owner", nullable = false)
     private boolean confirm_by_owner;
-    @Column(name = "recur", nullable = false)
-    private boolean recur;
+    @Column(name = "is_recur", nullable = false)
+    private boolean is_recur;
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "owner_id", referencedColumnName = "id", nullable = false)
     private User owner;

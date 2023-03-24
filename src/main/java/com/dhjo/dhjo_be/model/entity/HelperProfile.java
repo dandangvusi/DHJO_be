@@ -22,11 +22,9 @@ public class HelperProfile extends IdentifyEntity {
     private String identification_num;
     @Column(name = "birthday", nullable = false)
     private LocalDate birthday;
-    @Column(name = "gender", nullable = false)
-    @Enumerated(EnumType.STRING)
+    @Column(name = "gender", nullable = false, columnDefinition = "enum('MALE','FEMALE','OTHER')")
     private Enum.GENDER gender;
-    @Column(name = "education", nullable = false)
-    @Enumerated(EnumType.STRING)
+    @Column(name = "education", nullable = false, columnDefinition = "enum('SECONDARY_SCHOOL','HIGH_SCHOOL','COLLEGE','BACHELOR')")
     private Enum.EDUCATION education;
     @Column(name = "image", length = 255, nullable = false)
     private String image;

@@ -18,7 +18,7 @@ import java.time.LocalDate;
 public class RecurringPost extends IdentifyEntity {
     @Column(name = "end_date", nullable = false)
     private LocalDate end_date;
-    @Column(name = "period", nullable = false)
+    @Column(name = "period", nullable = false, columnDefinition = "enum('DAY','WEEK','MONTH')")
     private Enum.PERIOD period;
     @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "post_id", referencedColumnName = "id", nullable = false)

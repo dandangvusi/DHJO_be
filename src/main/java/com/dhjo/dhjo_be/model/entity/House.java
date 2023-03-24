@@ -15,7 +15,7 @@ import org.springframework.data.geo.Point;
 @NoArgsConstructor
 @AllArgsConstructor
 public class House extends BaseEntity {
-    @Column(name = "type", nullable = false)
+    @Column(name = "type", nullable = false, columnDefinition = "enum('HOUSE','APARTMENT')")
     private Enum.HOUSE_TYPE type;
     @Column(name = "floor_area", nullable = false)
     private int floor_area;
