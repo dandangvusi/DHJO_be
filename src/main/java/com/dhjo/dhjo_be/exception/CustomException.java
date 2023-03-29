@@ -1,0 +1,26 @@
+package com.dhjo.dhjo_be.exception;
+
+import org.springframework.http.HttpStatus;
+
+public class CustomException extends RuntimeException {
+    private HttpStatus status;
+    private String message;
+    public CustomException(HttpStatus status, String message){
+        this.status = status;
+        this.message = message;
+    }
+    public CustomException(HttpStatus status, String message, String message1){
+        super(message);
+        this.status = status;
+        this.message = message1;
+    }
+
+    public HttpStatus getStatus() {
+        return status;
+    }
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
+}
