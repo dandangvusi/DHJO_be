@@ -11,4 +11,6 @@ public interface UserRepository extends BaseRepository<User>, JpaSpecificationEx
     User findUserById(String id);
     @Query("SELECT u FROM User u WHERE (u.username=?1 OR u.email=?2) AND u.deleted IS NULL")
     User findUserByUsernameOrEmail(String username, String email);
+    Boolean existsByUsername(String username);
+    Boolean existsByEmail(String email);
 }

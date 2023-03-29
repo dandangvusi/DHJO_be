@@ -15,4 +15,8 @@ public class ErrorMessage {
     public static final String EXPIRED_JWT_TOKEN = "Expired JWT token";
     public static final String UNSUPPORTED_JWT_TOKEN = "Unsupported JWT token";
     public static final String EMPTY_JWT_CLAIMS_STRING = "Empty JWT claims string";
+    // sign up
+    public static final String USERNAME_ALREADY_USED = "Username is already used by another account";
+    public static final String EMAIL_ALREADY_USED = "Email is already used by another account";
+    public static final String USER_REGISTERED = "User registered successfully";
 }
