@@ -21,11 +21,12 @@ public class JwtTokenProvider {
         String username = authentication.getName();
         Date currDate = new Date();
         Date expiDate = new Date(currDate.getTime() + this.jwtExpiMs);
-        return Jwts.builder().setSubject(username)
-                .setIssuedAt(currDate)
+        String token = Jwts.builder().setSubject(username)
+                .setIssuedAt(new Date())
                 .setExpiration(expiDate)
                 .signWith(SignatureAlgorithm.HS512, this.jwtSecret)
                 .compact();
+        return token;
     }
     // get username from jwt token
     public String getUsernameByJwt(String token){
